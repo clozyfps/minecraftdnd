@@ -1,25 +1,9 @@
 {
-  "mod_elements": [
-    {
-      "name": "Test",
-      "type": "item",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "test",
-      "metadata": {
-        "files": [
-          "src/main/resources/assets/minecraft_dnd/models/item/test.json",
-          "src/main/java/net/mcreator/minecraftdnd/item/TestItem.java"
-        ]
-      }
-    }
-  ],
+  "mod_elements": [],
   "variable_elements": [],
   "sound_elements": [],
   "language_map": {
-    "en_us": {
-      "item.minecraft_dnd.test": "Test"
-    }
+    "en_us": {}
   },
   "foldersRoot": {
     "name": "~",
