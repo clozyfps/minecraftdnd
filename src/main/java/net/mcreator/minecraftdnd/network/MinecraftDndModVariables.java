@@ -28,7 +28,6 @@ import net.minecraft.client.Minecraft;
 import net.mcreator.minecraftdnd.MinecraftDndMod;
 
 import java.util.function.Supplier;
-import java.util.ArrayList;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class MinecraftDndModVariables {
@@ -46,29 +45,20 @@ public class MinecraftDndModVariables {
 	public static class EventBusVariableHandlers {
 		@SubscribeEvent
 		public static void onPlayerLoggedInSyncPlayerVariables(PlayerEvent.PlayerLoggedInEvent event) {
-			if (!event.getEntity().level().isClientSide()) {
-				for (Entity entityiterator : new ArrayList<>(event.getEntity().level().players())) {
-					((PlayerVariables) entityiterator.getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables())).syncPlayerVariables(entityiterator);
-				}
-			}
+			if (!event.getEntity().level().isClientSide())
+				((PlayerVariables) event.getEntity().getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables())).syncPlayerVariables(event.getEntity());
 		}
 
 		@SubscribeEvent
 		public static void onPlayerRespawnedSyncPlayerVariables(PlayerEvent.PlayerRespawnEvent event) {
-			if (!event.getEntity().level().isClientSide()) {
-				for (Entity entityiterator : new ArrayList<>(event.getEntity().level().players())) {
-					((PlayerVariables) entityiterator.getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables())).syncPlayerVariables(entityiterator);
-				}
-			}
+			if (!event.getEntity().level().isClientSide())
+				((PlayerVariables) event.getEntity().getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables())).syncPlayerVariables(event.getEntity());
 		}
 
 		@SubscribeEvent
 		public static void onPlayerChangedDimensionSyncPlayerVariables(PlayerEvent.PlayerChangedDimensionEvent event) {
-			if (!event.getEntity().level().isClientSide()) {
-				for (Entity entityiterator : new ArrayList<>(event.getEntity().level().players())) {
-					((PlayerVariables) entityiterator.getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables())).syncPlayerVariables(entityiterator);
-				}
-			}
+			if (!event.getEntity().level().isClientSide())
+				((PlayerVariables) event.getEntity().getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables())).syncPlayerVariables(event.getEntity());
 		}
 
 		@SubscribeEvent
@@ -106,12 +96,8 @@ public class MinecraftDndModVariables {
 			clone.Sub3Atr5 = original.Sub3Atr5;
 			clone.Sub4Atr5 = original.Sub4Atr5;
 			clone.Sub5Atr5 = original.Sub5Atr5;
+			clone.AttackModifier = original.AttackModifier;
 			if (!event.isWasDeath()) {
-			}
-			if (!event.getEntity().level().isClientSide()) {
-				for (Entity entityiterator : new ArrayList<>(event.getEntity().level().players())) {
-					((PlayerVariables) entityiterator.getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables())).syncPlayerVariables(entityiterator);
-				}
 			}
 		}
 	}
@@ -177,10 +163,11 @@ public class MinecraftDndModVariables {
 		public String Sub3Atr5 = "\"\"";
 		public String Sub4Atr5 = "\"\"";
 		public String Sub5Atr5 = "\"\"";
+		public double AttackModifier = 0;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
-				MinecraftDndMod.PACKET_HANDLER.send(PacketDistributor.DIMENSION.with(entity.level()::dimension), new PlayerVariablesSyncMessage(this, entity.getId()));
+				MinecraftDndMod.PACKET_HANDLER.send(PacketDistributor.PLAYER.with(() -> serverPlayer), new PlayerVariablesSyncMessage(this));
 		}
 
 		public Tag writeNBT() {
@@ -215,6 +202,7 @@ public class MinecraftDndModVariables {
 			nbt.putString("Sub3Atr5", Sub3Atr5);
 			nbt.putString("Sub4Atr5", Sub4Atr5);
 			nbt.putString("Sub5Atr5", Sub5Atr5);
+			nbt.putDouble("AttackModifier", AttackModifier);
 			return nbt;
 		}
 
@@ -250,39 +238,31 @@ public class MinecraftDndModVariables {
 			Sub3Atr5 = nbt.getString("Sub3Atr5");
 			Sub4Atr5 = nbt.getString("Sub4Atr5");
 			Sub5Atr5 = nbt.getString("Sub5Atr5");
+			AttackModifier = nbt.getDouble("AttackModifier");
 		}
 	}
 
-	@SubscribeEvent
-	public static void registerMessage(FMLCommonSetupEvent event) {
-		MinecraftDndMod.addNetworkMessage(PlayerVariablesSyncMessage.class, PlayerVariablesSyncMessage::buffer, PlayerVariablesSyncMessage::new, PlayerVariablesSyncMessage::handler);
-	}
-
 	public static class PlayerVariablesSyncMessage {
-		private final int target;
 		private final PlayerVariables data;
 
 		public PlayerVariablesSyncMessage(FriendlyByteBuf buffer) {
 			this.data = new PlayerVariables();
 			this.data.readNBT(buffer.readNbt());
-			this.target = buffer.readInt();
 		}
 
-		public PlayerVariablesSyncMessage(PlayerVariables data, int entityid) {
+		public PlayerVariablesSyncMessage(PlayerVariables data) {
 			this.data = data;
-			this.target = entityid;
 		}
 
 		public static void buffer(PlayerVariablesSyncMessage message, FriendlyByteBuf buffer) {
 			buffer.writeNbt((CompoundTag) message.data.writeNBT());
-			buffer.writeInt(message.target);
 		}
 
 		public static void handler(PlayerVariablesSyncMessage message, Supplier<NetworkEvent.Context> contextSupplier) {
 			NetworkEvent.Context context = contextSupplier.get();
 			context.enqueueWork(() -> {
 				if (!context.getDirection().getReceptionSide().isServer()) {
-					PlayerVariables variables = ((PlayerVariables) Minecraft.getInstance().player.level().getEntity(message.target).getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables()));
+					PlayerVariables variables = ((PlayerVariables) Minecraft.getInstance().player.getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables()));
 					variables.Attribute4 = message.data.Attribute4;
 					variables.Attribute3 = message.data.Attribute3;
 					variables.Attribute2 = message.data.Attribute2;
@@ -313,6 +293,7 @@ public class MinecraftDndModVariables {
 					variables.Sub3Atr5 = message.data.Sub3Atr5;
 					variables.Sub4Atr5 = message.data.Sub4Atr5;
 					variables.Sub5Atr5 = message.data.Sub5Atr5;
+					variables.AttackModifier = message.data.AttackModifier;
 				}
 			});
 			context.setPacketHandled(true);

@@ -1,5 +1,20 @@
 {
-  "mod_elements": [],
+  "mod_elements": [
+    {
+      "name": "BasicAttackRolls",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "basic_attack_rolls",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/minecraftdnd/procedures/BasicAttackRollsProcedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/Procedures"
+    }
+  ],
   "variable_elements": [
     {
       "name": "Attribute4",
@@ -180,6 +195,12 @@
       "type": "string",
       "scope": "player_persistent",
       "value": "\"\""
+    },
+    {
+      "name": "AttackModifier",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
     }
   ],
   "sound_elements": [],
