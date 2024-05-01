@@ -1,13 +1,129 @@
 {
   "mod_elements": [],
-  "variable_elements": [],
+  "variable_elements": [
+    {
+      "name": "Attribute4",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": ""
+    },
+    {
+      "name": "Attribute3",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": ""
+    },
+    {
+      "name": "Attribute2",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": ""
+    },
+    {
+      "name": "Attribute1",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": ""
+    }
+  ],
   "sound_elements": [],
   "language_map": {
-    "en_us": {}
+    "en_us": {
+      "item.minecraft_dnd.test": "Test"
+    }
   },
   "foldersRoot": {
     "name": "~",
-    "children": []
+    "children": [
+      {
+        "name": "Gamerules",
+        "children": []
+      },
+      {
+        "name": "Procedures",
+        "children": []
+      },
+      {
+        "name": "Advancements",
+        "children": []
+      },
+      {
+        "name": "Blocks",
+        "children": []
+      },
+      {
+        "name": "Tags",
+        "children": []
+      },
+      {
+        "name": "GUI",
+        "children": []
+      },
+      {
+        "name": "Overlay",
+        "children": []
+      },
+      {
+        "name": "Weapons",
+        "children": []
+      },
+      {
+        "name": "Dimensions",
+        "children": []
+      },
+      {
+        "name": "Items",
+        "children": []
+      },
+      {
+        "name": "Biomes",
+        "children": []
+      },
+      {
+        "name": "Projectiles",
+        "children": []
+      },
+      {
+        "name": "Creative Tabs",
+        "children": []
+      },
+      {
+        "name": "Particles",
+        "children": []
+      },
+      {
+        "name": "Recipes",
+        "children": []
+      },
+      {
+        "name": "Functions",
+        "children": []
+      },
+      {
+        "name": "Armors",
+        "children": []
+      },
+      {
+        "name": "Mobs",
+        "children": []
+      },
+      {
+        "name": "Potions",
+        "children": []
+      },
+      {
+        "name": "Keybinds",
+        "children": []
+      },
+      {
+        "name": "Damage Types",
+        "children": []
+      },
+      {
+        "name": "Commands",
+        "children": []
+      }
+    ]
   },
   "workspaceSettings": {
     "modid": "minecraft_dnd",
