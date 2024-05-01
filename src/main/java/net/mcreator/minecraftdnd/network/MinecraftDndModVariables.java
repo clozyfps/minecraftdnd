@@ -106,6 +106,10 @@ public class MinecraftDndModVariables {
 			clone.Sub3Atr5 = original.Sub3Atr5;
 			clone.Sub4Atr5 = original.Sub4Atr5;
 			clone.Sub5Atr5 = original.Sub5Atr5;
+			clone.DefenseModifier = original.DefenseModifier;
+			clone.DefenseType = original.DefenseType;
+			clone.AttackModifier = original.AttackModifier;
+			clone.DodgeModifier = original.DodgeModifier;
 			if (!event.isWasDeath()) {
 			}
 			if (!event.getEntity().level().isClientSide()) {
@@ -177,6 +181,10 @@ public class MinecraftDndModVariables {
 		public String Sub3Atr5 = "\"\"";
 		public String Sub4Atr5 = "\"\"";
 		public String Sub5Atr5 = "\"\"";
+		public double DefenseModifier = 0;
+		public String DefenseType = "Block";
+		public double AttackModifier = 0;
+		public double DodgeModifier = 0;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -215,6 +223,10 @@ public class MinecraftDndModVariables {
 			nbt.putString("Sub3Atr5", Sub3Atr5);
 			nbt.putString("Sub4Atr5", Sub4Atr5);
 			nbt.putString("Sub5Atr5", Sub5Atr5);
+			nbt.putDouble("DefenseModifier", DefenseModifier);
+			nbt.putString("DefenseType", DefenseType);
+			nbt.putDouble("AttackModifier", AttackModifier);
+			nbt.putDouble("DodgeModifier", DodgeModifier);
 			return nbt;
 		}
 
@@ -250,6 +262,10 @@ public class MinecraftDndModVariables {
 			Sub3Atr5 = nbt.getString("Sub3Atr5");
 			Sub4Atr5 = nbt.getString("Sub4Atr5");
 			Sub5Atr5 = nbt.getString("Sub5Atr5");
+			DefenseModifier = nbt.getDouble("DefenseModifier");
+			DefenseType = nbt.getString("DefenseType");
+			AttackModifier = nbt.getDouble("AttackModifier");
+			DodgeModifier = nbt.getDouble("DodgeModifier");
 		}
 	}
 
@@ -313,6 +329,10 @@ public class MinecraftDndModVariables {
 					variables.Sub3Atr5 = message.data.Sub3Atr5;
 					variables.Sub4Atr5 = message.data.Sub4Atr5;
 					variables.Sub5Atr5 = message.data.Sub5Atr5;
+					variables.DefenseModifier = message.data.DefenseModifier;
+					variables.DefenseType = message.data.DefenseType;
+					variables.AttackModifier = message.data.AttackModifier;
+					variables.DodgeModifier = message.data.DodgeModifier;
 				}
 			});
 			context.setPacketHandled(true);

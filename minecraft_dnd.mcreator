@@ -13,6 +13,45 @@
         ]
       },
       "path": "~/GUI"
+    },
+    {
+      "name": "BasicAttackRolls",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "basic_attack_rolls",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/minecraftdnd/procedures/BasicAttackRollsProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Procedures"
     }
   ],
   "variable_elements": [
@@ -195,6 +234,30 @@
       "type": "string",
       "scope": "player_persistent",
       "value": "\"\""
+    },
+    {
+      "name": "DefenseModifier",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "DefenseType",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": "Block"
+    },
+    {
+      "name": "AttackModifier",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "DodgeModifier",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
     }
   ],
   "sound_elements": [],
