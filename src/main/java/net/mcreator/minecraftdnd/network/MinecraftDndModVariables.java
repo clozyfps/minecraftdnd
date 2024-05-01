@@ -97,6 +97,8 @@ public class MinecraftDndModVariables {
 			clone.Sub4Atr5 = original.Sub4Atr5;
 			clone.Sub5Atr5 = original.Sub5Atr5;
 			clone.AttackModifier = original.AttackModifier;
+			clone.DefenseModifier = original.DefenseModifier;
+			clone.DefenseType = original.DefenseType;
 			if (!event.isWasDeath()) {
 			}
 		}
@@ -164,6 +166,8 @@ public class MinecraftDndModVariables {
 		public String Sub4Atr5 = "\"\"";
 		public String Sub5Atr5 = "\"\"";
 		public double AttackModifier = 0;
+		public double DefenseModifier = 0;
+		public String DefenseType = "\"\"";
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -203,6 +207,8 @@ public class MinecraftDndModVariables {
 			nbt.putString("Sub4Atr5", Sub4Atr5);
 			nbt.putString("Sub5Atr5", Sub5Atr5);
 			nbt.putDouble("AttackModifier", AttackModifier);
+			nbt.putDouble("DefenseModifier", DefenseModifier);
+			nbt.putString("DefenseType", DefenseType);
 			return nbt;
 		}
 
@@ -239,6 +245,8 @@ public class MinecraftDndModVariables {
 			Sub4Atr5 = nbt.getString("Sub4Atr5");
 			Sub5Atr5 = nbt.getString("Sub5Atr5");
 			AttackModifier = nbt.getDouble("AttackModifier");
+			DefenseModifier = nbt.getDouble("DefenseModifier");
+			DefenseType = nbt.getString("DefenseType");
 		}
 	}
 
@@ -294,6 +302,8 @@ public class MinecraftDndModVariables {
 					variables.Sub4Atr5 = message.data.Sub4Atr5;
 					variables.Sub5Atr5 = message.data.Sub5Atr5;
 					variables.AttackModifier = message.data.AttackModifier;
+					variables.DefenseModifier = message.data.DefenseModifier;
+					variables.DefenseType = message.data.DefenseType;
 				}
 			});
 			context.setPacketHandled(true);
