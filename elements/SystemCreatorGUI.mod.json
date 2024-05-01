@@ -1,0 +1,532 @@
+{
+  "_fv": 57,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 0,
+    "height": 0,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": false,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "button",
+        "data": {
+          "name": "button_empty",
+          "text": "[[ + ]]",
+          "isUndecorated": true,
+          "width": 61,
+          "height": 20,
+          "x": 6,
+          "y": 8
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_empty1",
+          "text": "[[ + ]]",
+          "isUndecorated": true,
+          "width": 61,
+          "height": 20,
+          "x": 6,
+          "y": 44
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_empty2",
+          "text": "[[ + ]]",
+          "isUndecorated": true,
+          "width": 61,
+          "height": 20,
+          "x": 6,
+          "y": 80
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_empty3",
+          "text": "[[ + ]]",
+          "isUndecorated": true,
+          "width": 61,
+          "height": 20,
+          "x": 6,
+          "y": 116
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_empty4",
+          "text": "[[ + ]]",
+          "isUndecorated": true,
+          "width": 61,
+          "height": 20,
+          "x": 6,
+          "y": 152
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_1",
+          "text": "1",
+          "isUndecorated": false,
+          "width": 30,
+          "height": 20,
+          "x": 249,
+          "y": 8
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_2",
+          "text": "2",
+          "isUndecorated": false,
+          "width": 30,
+          "height": 20,
+          "x": 285,
+          "y": 8
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_3",
+          "text": "3",
+          "isUndecorated": false,
+          "width": 30,
+          "height": 20,
+          "x": 321,
+          "y": 8
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_4",
+          "text": "4",
+          "isUndecorated": false,
+          "width": 30,
+          "height": 20,
+          "x": 357,
+          "y": 8
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_5",
+          "text": "5",
+          "isUndecorated": false,
+          "width": 30,
+          "height": 20,
+          "x": 393,
+          "y": 8
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_modifiers",
+          "text": {
+            "fixedValue": "Modifiers:"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 195,
+          "y": 8
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_11",
+          "text": "1",
+          "isUndecorated": false,
+          "width": 30,
+          "height": 20,
+          "x": 249,
+          "y": 44
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_21",
+          "text": "2",
+          "isUndecorated": false,
+          "width": 30,
+          "height": 20,
+          "x": 285,
+          "y": 44
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_31",
+          "text": "3",
+          "isUndecorated": false,
+          "width": 30,
+          "height": 20,
+          "x": 321,
+          "y": 44
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_41",
+          "text": "4",
+          "isUndecorated": false,
+          "width": 30,
+          "height": 20,
+          "x": 357,
+          "y": 44
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_51",
+          "text": "5",
+          "isUndecorated": false,
+          "width": 30,
+          "height": 20,
+          "x": 393,
+          "y": 44
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_modifiers1",
+          "text": {
+            "fixedValue": "Modifiers:"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 195,
+          "y": 44
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_12",
+          "text": "1",
+          "isUndecorated": false,
+          "width": 30,
+          "height": 20,
+          "x": 249,
+          "y": 80
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_22",
+          "text": "2",
+          "isUndecorated": false,
+          "width": 30,
+          "height": 20,
+          "x": 285,
+          "y": 80
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_32",
+          "text": "3",
+          "isUndecorated": false,
+          "width": 30,
+          "height": 20,
+          "x": 321,
+          "y": 80
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_42",
+          "text": "4",
+          "isUndecorated": false,
+          "width": 30,
+          "height": 20,
+          "x": 357,
+          "y": 80
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_52",
+          "text": "5",
+          "isUndecorated": false,
+          "width": 30,
+          "height": 20,
+          "x": 393,
+          "y": 80
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_modifiers2",
+          "text": {
+            "fixedValue": "Modifiers:"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 195,
+          "y": 80
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_modifiers3",
+          "text": {
+            "fixedValue": "Modifiers:"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 195,
+          "y": 116
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_modifiers4",
+          "text": {
+            "fixedValue": "Modifiers:"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 195,
+          "y": 152
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_13",
+          "text": "1",
+          "isUndecorated": false,
+          "width": 30,
+          "height": 20,
+          "x": 249,
+          "y": 116
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_23",
+          "text": "2",
+          "isUndecorated": false,
+          "width": 30,
+          "height": 20,
+          "x": 285,
+          "y": 116
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_33",
+          "text": "3",
+          "isUndecorated": false,
+          "width": 30,
+          "height": 20,
+          "x": 321,
+          "y": 116
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_43",
+          "text": "4",
+          "isUndecorated": false,
+          "width": 30,
+          "height": 20,
+          "x": 357,
+          "y": 116
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_53",
+          "text": "5",
+          "isUndecorated": false,
+          "width": 30,
+          "height": 20,
+          "x": 393,
+          "y": 116
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_14",
+          "text": "1",
+          "isUndecorated": false,
+          "width": 30,
+          "height": 20,
+          "x": 249,
+          "y": 152
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_24",
+          "text": "2",
+          "isUndecorated": false,
+          "width": 30,
+          "height": 20,
+          "x": 285,
+          "y": 152
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_34",
+          "text": "3",
+          "isUndecorated": false,
+          "width": 30,
+          "height": 20,
+          "x": 321,
+          "y": 152
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_44",
+          "text": "4",
+          "isUndecorated": false,
+          "width": 30,
+          "height": 20,
+          "x": 357,
+          "y": 152
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_54",
+          "text": "5",
+          "isUndecorated": false,
+          "width": 30,
+          "height": 20,
+          "x": 393,
+          "y": 152
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_attr",
+          "text": {
+            "fixedValue": "Attr"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 6,
+          "y": 8
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_attr1",
+          "text": {
+            "fixedValue": "Attr"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 6,
+          "y": 44
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_attr2",
+          "text": {
+            "fixedValue": "Attr"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 6,
+          "y": 80
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_attr3",
+          "text": {
+            "fixedValue": "Attr"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 6,
+          "y": 116
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_attr4",
+          "text": {
+            "fixedValue": "Attr"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 6,
+          "y": 152
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": true
+    }
+  }
+}
