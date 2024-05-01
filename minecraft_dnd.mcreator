@@ -15,7 +15,32 @@
       "path": "~/Items"
     }
   ],
-  "variable_elements": [],
+  "variable_elements": [
+    {
+      "name": "Attribute1",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": ""
+    },
+    {
+      "name": "Attribute2",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": ""
+    },
+    {
+      "name": "Attribute3",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": ""
+    },
+    {
+      "name": "Attribute4",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": ""
+    }
+  ],
   "sound_elements": [],
   "language_map": {
     "en_us": {
